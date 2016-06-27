@@ -1,0 +1,5 @@
+命令行执行
+node app.js
+
+浏览器执行
+http://localhost:3000/?q=alsotang
