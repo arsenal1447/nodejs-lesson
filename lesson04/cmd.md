@@ -7,3 +7,9 @@ install the software
 	npm install --save cheerio
 
 
+cmd 命令行运行
+
+```
+node app.js
+```
+
