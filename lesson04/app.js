@@ -1,7 +1,7 @@
 var eventproxy = require('eventproxy');
 var superagent = require('superagent');
 var cheerio = require('cheerio');
-// url Ä£¿éÊÇ Node.js ±ê×¼¿âÀïÃæµÄ
+// url æ¨¡å—æ˜¯ Node.js æ ‡å‡†åº“é‡Œé¢çš„
 // http://nodejs.org/api/url.html
 var url = require('url');
 
@@ -14,13 +14,13 @@ superagent.get(cnodeUrl)
     }
     var topicUrls = [];
     var $ = cheerio.load(res.text);
-    // »ñÈ¡Ê×Ò³ËùÓĞµÄÁ´½Ó
+    // è·å–é¦–é¡µæ‰€æœ‰çš„é“¾æ¥
     $('#topic_list .topic_title').each(function (idx, element) {
       var $element = $(element);
-      // $element.attr('href') ±¾À´µÄÑù×ÓÊÇ /topic/542acd7d5d28233425538b04
-      // ÎÒÃÇÓÃ url.resolve À´×Ô¶¯ÍÆ¶Ï³öÍêÕû url£¬±ä³É
-      // https://cnodejs.org/topic/542acd7d5d28233425538b04 µÄĞÎÊ½
-      // ¾ßÌåÇë¿´ http://nodejs.org/api/url.html#url_url_resolve_from_to µÄÊ¾Àı
+      // $element.attr('href') æœ¬æ¥çš„æ ·å­æ˜¯ /topic/542acd7d5d28233425538b04
+      // æˆ‘ä»¬ç”¨ url.resolve æ¥è‡ªåŠ¨æ¨æ–­å‡ºå®Œæ•´ urlï¼Œå˜æˆ
+      // https://cnodejs.org/topic/542acd7d5d28233425538b04 çš„å½¢å¼
+      // å…·ä½“è¯·çœ‹ http://nodejs.org/api/url.html#url_url_resolve_from_to çš„ç¤ºä¾‹
       var href = url.resolve(cnodeUrl, $element.attr('href'));
       topicUrls.push(href);
     });
